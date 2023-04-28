@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 
 # Find the data file names
-files_names = os.listdir(DATA_DIR)
+files_names = [ file for file in os.listdir(DATA_DIR) if file.endswith('.csv')]
 
 # Opening connection with database
 path_connection = path_connection.format(path=os.path.join(DATA_DIR, 'olist.db'))
